@@ -1,0 +1,128 @@
+.root-layout {
+  display: flex;
+  position: relative;
+  height: 100%;
+
+  .root-layout-nav {
+    background-color: white;
+    flex: 1;
+    border-right: 0.5px solid rgb(230, 227, 227);
+    min-height: 100vh;
+    padding-top: 25px;
+    padding-inline: 16px;
+
+    .sidebar-top {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .logo {
+        font-size: 26px;
+        font-family: "Poppins";
+        color: #2b3674;
+      }
+      .spend {
+        font-weight: bold;
+      }
+      .wise {
+        font-weight: 400;
+      }
+    }
+
+    .sidebar-center {
+      text-decoration: none;
+      display: flex;
+      padding-inline-end: 16px;
+      padding-inline-start: 20px;
+    }
+    // hr {
+    //   height: 0;
+    //   border: 0.5px solid lightgray;
+    // }
+  }
+}
+// .root-layout-nav nav {
+//   display: flex;
+//   flex-direction: column;
+//   text-decoration: none;
+// }
+
+.root-layout-nav nav > img {
+  margin: 16px;
+}
+
+.root-layout main {
+  flex: 5;
+  background-color: #f3f3f3;
+  padding: 30px;
+}
+.nested-layout-navigation {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  width: 248px;
+  text-decoration: none;
+  border-right: 1px solid var(--neutral-100);
+}
+
+.nested-nav-layout {
+  display: flex;
+  height: 100%;
+}
+h1 {
+  font-family: DM Sans;
+  font-size: 34px;
+  font-weight: bold;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.68px;
+  color: #1b2559;
+}
+
+h2 {
+  font-family: DM Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  color: var(--dark-100);
+}
+
+h3 {
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--gray-100);
+}
+
+h4 {
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 175% */
+  letter-spacing: -0.32px;
+}
+.menu-items {
+  padding: 8px 16px;
+}
+.content-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  background-color: var(--neutral-200);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar-bottom {
+  background-color: var(--neutral-300);
+  padding: 14px;
+}

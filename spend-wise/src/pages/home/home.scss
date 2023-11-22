@@ -1,0 +1,535 @@
+.home-container-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top-container,
+.center-container,
+.bottom-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card-padding {
+  padding: 10px;
+  margin-top: 1rem;
+}
+
+.font-white {
+  color: var(--gray-400);
+}
+
+.font-white {
+  color: var(--white) !important;
+}
+
+.card-background {
+  background-color: var(--purple-200) !important;
+  background: linear-gradient(135deg, #868cff 0%, var(--purple-200) 100%);
+  // opacity: 0.1;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.tranasction-widget {
+  height: 3rem !important;
+}
+
+.transaction-widget-icon {
+  width: 2rem !important;
+  height: 2rem !important;
+  padding: 2px !important;
+}
+
+.transaction-box-shadow {
+  box-shadow: none;
+}
+
+.top,
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "DM Sans";
+  padding-left: 1.25rem;
+
+  .title {
+    font-size: 14px;
+    color: #a3aed0;
+  }
+
+  .amount {
+    font-size: 34px;
+    font-weight: bold;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: -0.68px;
+    color: #1b2559;
+  }
+}
+
+.profile-container,
+.spend-this-month-container,
+.your-transactions-container,
+.to-do-container {
+  .profile-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // position: relative;
+    .avatar {
+      display: flex;
+    }
+    .profile-avatar {
+      background-color: var(--gray-300);
+      border-radius: 50%;
+      width: 127.225px;
+      height: 127.225px;
+      flex-shrink: 0;
+      // position: absolute;
+      // margin: -45px 0px 0px 32px;
+      // z-index: 1;
+    }
+  }
+
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    // margin: 1rem 0px 0px 0px;
+    // align-items: center;
+    // height: 100%;
+  }
+
+  .profile-name-loc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .profile-name {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--dark-100);
+  }
+
+  .profile-location {
+    display: flex;
+    align-items: center;
+  }
+
+  .profile-info {
+    display: flex;
+    // height: 100%;
+    margin-top: 2rem;
+    justify-content: center;
+    gap: 3.5rem;
+    .profile-projects,
+    .profile-followers,
+    .profile-following {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .profileInfoNum {
+        text-align: center;
+        /* Display Text/Extra-Small/Display Extra-Small (Bold) */
+        font-family: DM Sans;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px; /* 133.333% */
+        letter-spacing: -0.48px;
+      }
+    }
+  }
+
+  .profile-edit {
+    display: flex;
+    gap: 2px;
+    padding: 8px 0px 0px 0px;
+  }
+
+  // .profile-edit-image {
+  //   height: 50px;
+  //   width: 50px;
+  // }
+
+  .profile-edit-label {
+    color: var(--purple-100);
+  }
+}
+
+@media screen and (min-width: 33em) {
+}
+
+@media screen and (min-width: 38em) {
+}
+
+@media screen and (min-width: 54em) {
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .profile-container {
+    grid-row: span 2;
+  }
+
+  .top-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .center-container {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 10rem));
+    gap: 20px;
+
+    .chart-container {
+      grid-column: span 4;
+      grid-row: span 2;
+    }
+
+    .profile-container {
+      .profile-info {
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  .bottom-container {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 10rem));
+    gap: 20px;
+  }
+
+  .spend-this-month-container,
+  .your-transactions-container,
+  .to-do-container {
+    grid-row: span 2;
+
+    .account-spending-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0px 10px 0px 10px;
+
+      .box-shadow {
+        // box-shadow: 0px 18px 40px 0px rgba(112, 144, 176, 0.12);
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+      }
+      .account-container {
+        position: relative;
+        .account {
+          display: flex;
+          .account-top {
+            width: 50%;
+            z-index: 2;
+            .account-amount {
+              margin-top: 5rem;
+            }
+          }
+          .account-bottom {
+            z-index: 1;
+          }
+        }
+      }
+      .account-container::before {
+        position: absolute;
+        z-index: 0;
+        content: "";
+        display: block;
+        left: 50%;
+        top: 0;
+        height: 100%;
+        width: 30%;
+        border-top-right-radius: 20px;
+        background-color: var(--purple-200);
+        background: linear-gradient(
+          120deg,
+          #868cff -30%,
+          var(--purple-200) 120%
+        );
+        -webkit-transform: skewX(-20deg);
+        -moz-transform: skewX(-20deg);
+        -ms-transform: skewX(-20deg);
+        transform: skewX(-20deg);
+      }
+      .earning-spending-container {
+        display: flex;
+        gap: 1rem;
+        .margin-top {
+          margin-top: 3rem;
+        }
+        .earning {
+          flex-grow: 1;
+        }
+        .spending {
+          flex-grow: 1;
+        }
+      }
+    }
+
+    .transaction {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .transaction-widget-container {
+        display: flex;
+        flex-direction: column;
+        h3 {
+          font-size: 16px;
+          font-weight: 700;
+          color: var(--gray-500);
+        }
+        h4 {
+          font-size: 14px;
+          font-weight: 500;
+          color: var(--gray-100);
+        }
+      }
+      .transaction-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 5px;
+        color: var(--purple-200);
+        margin-right: 1rem;
+        h4 {
+          color: var(--purple-200);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .center-container {
+    grid-template-rows: repeat(2, minmax(0, 12rem));
+    .profile-container {
+      .profile-info {
+        margin-top: 4rem;
+        gap: 3.5rem;
+      }
+    }
+  }
+
+  .bottom-container {
+    grid-template-rows: repeat(2, minmax(0, 12rem));
+  }
+}
+
+.home {
+  // display: flex;
+  // flex-direction: column;
+  // gap: 20px;
+  // min-height: 84vh;
+
+  .global-h2 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--gray-100);
+  }
+
+  .global-h3 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--dark-100);
+  }
+
+  .widgets {
+    display: flex;
+    gap: 20px;
+  }
+
+  // .home-container {
+  //   display: grid;
+  //   // grid-template-rows: repeat(1, 1fr);
+  //   // grid-template-columns: repeat(3, 1fr);
+  //   grid-template-areas:
+  //     "widget-1"
+  //     "widget-2"
+  //     "widget-3"
+  //     "widget-4"
+  //     "chart"
+  //     "profile"
+  //     "spend-this-month"
+  //     "your-transactions"
+  //     "to-do";
+  //   gap: 20px;
+
+  //   // .left-container {
+  //   //   display: grid;
+  //   //   gap: 20px;
+  //   //   grid-column: span 2 / span 2;
+
+  //   //   .card1 {
+  //   //     // display: flex;
+  //   //     // grid-row-start: 1;
+  //   //     // grid-row-end: 2;
+  //   //     // grid-column-start: 1;
+  //   //     // grid-column-end: 3;
+  //   //   }
+
+  //   //   .padding {
+  //   //     padding: 10px;
+  //   //   }
+
+  //   //   .card-padding {
+  //   //     padding: 10px;
+  //   //     margin-top: 1rem;
+  //   //   }
+
+  //   //   .bottom-container {
+  //   //     display: grid;
+  //   //     grid-template-rows: repeat(1, 1fr);
+  //   //     grid-template-columns: repeat(2, 1fr);
+  //   //     gap: 20px;
+  //   //   }
+
+  //   //   .card2 {
+  //   //     .profile-pic {
+  //   //       display: flex;
+  //   //       flex-direction: column;
+  //   //       align-items: center;
+  //   //       // position: relative;
+  //   //       .avatar {
+  //   //         display: flex;
+  //   //       }
+  //   //       .profile-avatar {
+  //   //         background-color: var(--gray-300);
+  //   //         border-radius: 50%;
+  //   //         width: 127.225px;
+  //   //         height: 127.225px;
+  //   //         flex-shrink: 0;
+  //   //         // position: absolute;
+  //   //         // margin: -45px 0px 0px 32px;
+  //   //         // z-index: 1;
+  //   //       }
+  //   //     }
+
+  //   //     .profile-details {
+  //   //       display: flex;
+  //   //       flex-direction: column;
+  //   //       margin: 1rem 0px 0px 0px;
+  //   //       align-items: center;
+  //   //       height: 100%;
+  //   //     }
+
+  //   //     .profile-name {
+  //   //       font-size: 24px;
+  //   //       font-style: normal;
+  //   //       font-weight: 700;
+  //   //       line-height: 28px;
+  //   //       color: var(--dark-100);
+  //   //     }
+
+  //   //     .profile-location {
+  //   //       display: flex;
+  //   //       align-items: center;
+  //   //     }
+
+  //   //     .profile-info {
+  //   //       display: flex;
+  //   //       height: 100%;
+  //   //       justify-content: center;
+  //   //       gap: 3.5rem;
+  //   //       .profile-projects,
+  //   //       .profile-followers,
+  //   //       .profile-following {
+  //   //         display: flex;
+  //   //         flex-direction: column;
+  //   //         justify-content: center;
+  //   //         align-items: center;
+
+  //   //         .profileInfoNum {
+  //   //           text-align: center;
+  //   //           /* Display Text/Extra-Small/Display Extra-Small (Bold) */
+  //   //           font-family: DM Sans;
+  //   //           font-size: 24px;
+  //   //           font-style: normal;
+  //   //           font-weight: 700;
+  //   //           line-height: 32px; /* 133.333% */
+  //   //           letter-spacing: -0.48px;
+  //   //         }
+  //   //       }
+  //   //     }
+
+  //   //     .profile-edit {
+  //   //       display: flex;
+  //   //       gap: 2px;
+  //   //       padding: 8px 0px 0px 0px;
+  //   //     }
+
+  //   //     // .profile-edit-image {
+  //   //     //   height: 50px;
+  //   //     //   width: 50px;
+  //   //     // }
+
+  //   //     .profile-edit-label {
+  //   //       color: var(--purple-100);
+  //   //     }
+  //   //   }
+  //   // }
+  // }
+
+  // @media (min-width: 50em) {
+  //   .home-container {
+  //     grid-template-areas:
+  //       "widget-1 widget-2 widget-3 widget-4"
+  //       "chart chart profile"
+  //       "spend-this-monthyour-transactions to-do";
+  //   }
+  // }
+
+  .top,
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "DM Sans";
+    padding-left: 10px;
+
+    .title {
+      font-size: 14px;
+      color: #a3aed0;
+    }
+
+    .amount {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 32px;
+      letter-spacing: -0.48px;
+      color: #1b2559;
+    }
+  }
+}

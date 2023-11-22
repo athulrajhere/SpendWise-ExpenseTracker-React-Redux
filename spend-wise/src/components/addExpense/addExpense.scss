@@ -1,0 +1,33 @@
+.category-amount-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.margin-top {
+  margin-top: 0.5rem;
+}
+
+.flex-w-direction {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea{
+    resize: vertical;
+    min-height: 5rem !important;
+    max-height: 10rem !important;
+}
+
+.date-picker {
+  width: 20rem;
+  border: 2px solid rgb(223, 225, 230);
+  border-radius: 5px;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  &:focus {
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(76, 154, 255);
+  }
+}
