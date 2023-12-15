@@ -18,7 +18,7 @@
 }
 
 .font-white {
-  color: var(--gray-400);
+  color: var(--neutral-400);
 }
 
 .font-white {
@@ -99,7 +99,7 @@ button {
       display: flex;
     }
     .profile-avatar {
-      background-color: var(--gray-300);
+      background-color: var(--neutral-600);
       border-radius: 50%;
       width: 127.225px;
       height: 127.225px;
@@ -130,7 +130,7 @@ button {
     font-style: normal;
     font-weight: 700;
     line-height: 28px;
-    color: var(--dark-100);
+    color: var(--purple-400);
   }
 
   .profile-location {
@@ -305,7 +305,7 @@ button {
         h3 {
           font-size: 16px;
           font-weight: 700;
-          color: var(--gray-500);
+          color: var(--purple-400);//500->400
         }
         h4 {
           font-size: 14px;
@@ -363,7 +363,7 @@ button {
     font-style: normal;
     font-weight: 700;
     line-height: 28px;
-    color: var(--dark-100);
+    color: var(--purple-400);
   }
 
   .widgets {

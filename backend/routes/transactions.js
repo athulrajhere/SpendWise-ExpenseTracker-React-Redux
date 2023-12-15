@@ -1,6 +1,6 @@
 const {
   addExpense,
-  getExpense,
+  getExpenses,
   deleteExpense,
   updateExpense,
 } = require("../controllers/expense");
@@ -10,23 +10,24 @@ const {
   deleteIncome,
   updateIncome,
 } = require("../controllers/income");
+const { protect } = require("../middleware/authMiddleware");
 
 const router = require("express").Router();
 
-router.post("/add-income", addIncome);
+router.post("/add-income", protect, addIncome);
 
-router.get("/get-incomes", getIncomes);
+router.get("/get-incomes", protect, getIncomes);
 
-router.put("/update-income/:id", updateIncome);
+router.put("/update-income/:id", protect, updateIncome);
 
-router.delete("/delete-income/:id", deleteIncome);
+router.delete("/delete-income/:id", protect, deleteIncome);
 
-router.post("/add-expense", addExpense);
+router.post("/add-expense", protect, addExpense);
 
-router.get("/get-expenses", getExpense);
+router.get("/get-expenses", protect, getExpenses);
 
-router.put("/update-expense/:id", updateExpense);
+router.put("/update-expense/:id", protect, updateExpense);
 
-router.delete("/delete-expense/:id", deleteExpense);
+router.delete("/delete-expense/:id", protect, deleteExpense);
 
 module.exports = router;

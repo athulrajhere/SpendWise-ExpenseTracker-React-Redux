@@ -1,18 +1,31 @@
-import { Widget } from "../../components/widget/Widget";
+import { Widget } from "../../components/common/widget/Widget";
 import "./home.scss";
-import { options } from "../../components/chart/Chart";
-import Card from "../../components/card/card";
+import { options } from "../../components/common/chart/Chart";
+import Card from "../../components/common/card/card";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import { user, states } from "../../data/account-profile";
+import { userData, states } from "../../data/account-profile";
 import avatar from "../../assets/avatars/Avatar.png";
 import { CiLocationOn } from "react-icons/ci";
 import { AiFillHome } from "react-icons/ai";
 import { BsArrowRight } from "react-icons/bs";
-import AddExpense from "../../components/addExpense/addExpense";
+import AddExpense from "../../components/home/addExpense/addExpense";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  const userProfile = user;
+  const navigate = useNavigate();
+
+  const { user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
+
+  const userProfile = userData;
   const transactionWidgetClassNames = {
     transactionWidget: "transaction-widget",
     transactionWidgetIcon: "transaction-widget-icon",
@@ -23,295 +36,6 @@ const Home = () => {
     console.log("clicked");
   };
   return (
-    // <div className="home">
-    //   <div className="widgets">
-    //     <Widget type="spent" />
-    //     <Widget type="balance" />
-    //     <Widget type="earnings" />
-    //     <Widget type="add-expense" />
-    //   </div>
-    //   <div className="center-container">
-    //     <div className="left-container">
-    //       <div className="card1">
-    //         <Card>
-    //           <div className="card-padding">
-    //             <div className="top">
-    //               <div className="title">Total Spent</div>
-    //               <div className="h1">$ 682.5</div>
-    //             </div>
-    //             <div className="bottom">
-    //               {/* <Chart title="" aspect={3} /> */}
-    //               <HighchartsReact highcharts={Highcharts} options={options} />
-    //             </div>
-    //           </div>
-    //         </Card>
-    //       </div>
-    //       <div className="bottom-container">
-    //         <div className="card2">
-    //           <Card>
-    //             <div className="card-padding">
-    //               <div className="profile-pic">
-    //                 <div className="avatar">
-    //                   <img
-    //                     className="profile-avatar"
-    //                     src={avatar}
-    //                     alt="image"
-    //                   />
-    //                 </div>
-    //               </div>
-    //               <div className="profile-details">
-    //                 <label >
-    //                   {userProfile.firstName +
-    //                     (userProfile.middleName
-    //                       ? " " +
-    //                         userProfile.middleName +
-    //                         " " +
-    //                         userProfile.lastName
-    //                       : " " + userProfile.lastName)}
-    //                 </label>
-    //                 <div className="profile-location">
-    //                   {<CiLocationOn />}
-    //                   <label >
-    //                     {userProfile.location.city},{" "}
-    //                     {userProfile.location.country}
-    //                   </label>
-    //                 </div>
-    //                 <div className="profile-info">
-    //                   <label className="profile-projects">
-    //                     <span >Projects</span>
-    //                     <span >
-    //                       {userProfile.projects}
-    //                     </span>
-    //                   </label>
-    //                   <label className="profile-followers">
-    //                     <span >Followers</span>
-    //                     <span >
-    //                       {userProfile.followers}
-    //                     </span>
-    //                   </label>
-    //                   <label className="profile-following">
-    //                     <span >Following</span>
-    //                     <span >
-    //                       {userProfile.following}
-    //                     </span>
-    //                   </label>
-    //                 </div>
-    //               </div>
-    //             </div>
-    //           </Card>
-    //         </div>
-    //         <div className="card2">
-    //           <Card>
-    //             <div className="card-padding">
-    //               <div className="profile-pic">
-    //                 <div className="avatar">
-    //                   <img
-    //                     className="profile-avatar"
-    //                     src={avatar}
-    //                     alt="image"
-    //                   />
-    //                 </div>
-    //               </div>
-    //               <div className="profile-details">
-    //                 <label >
-    //                   {userProfile.firstName +
-    //                     (userProfile.middleName
-    //                       ? " " +
-    //                         userProfile.middleName +
-    //                         " " +
-    //                         userProfile.lastName
-    //                       : " " + userProfile.lastName)}
-    //                 </label>
-    //                 <div className="profile-location">
-    //                   {<CiLocationOn />}
-    //                   <label >
-    //                     {userProfile.location.city},{" "}
-    //                     {userProfile.location.country}
-    //                   </label>
-    //                 </div>
-    //                 <div className="profile-info">
-    //                   <label className="profile-projects">
-    //                     <span >Projects</span>
-    //                     <span >
-    //                       {userProfile.projects}
-    //                     </span>
-    //                   </label>
-    //                   <label className="profile-followers">
-    //                     <span >Followers</span>
-    //                     <span >
-    //                       {userProfile.followers}
-    //                     </span>
-    //                   </label>
-    //                   <label className="profile-following">
-    //                     <span >Following</span>
-    //                     <span >
-    //                       {userProfile.following}
-    //                     </span>
-    //                   </label>
-    //                 </div>
-    //               </div>
-    //             </div>
-    //           </Card>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     {/* <div className="right-container">
-    //         <div className="card2">
-    //           <Card>
-    //             <div className="card-padding">
-    //               <div className="profile-pic">
-    //                 <div className="avatar">
-    //                   <img
-    //                     className="profile-avatar"
-    //                     src={avatar}
-    //                     alt="image"
-    //                   />
-    //                 </div>
-    //               </div>
-    //               <div className="profile-details">
-    //                 <label >
-    //                   {userProfile.firstName +
-    //                     (userProfile.middleName
-    //                       ? " " +
-    //                         userProfile.middleName +
-    //                         " " +
-    //                         userProfile.lastName
-    //                       : " " + userProfile.lastName)}
-    //                 </label>
-    //                 <div className="profile-location">
-    //                   {<CiLocationOn />}
-    //                   <label >
-    //                     {userProfile.location.city},{" "}
-    //                     {userProfile.location.country}
-    //                   </label>
-    //                 </div>
-    //                 <div className="profile-info">
-    //                   <label className="profile-projects">
-    //                     <span >Projects</span>
-    //                     <span >
-    //                       {userProfile.projects}
-    //                     </span>
-    //                   </label>
-    //                   <label className="profile-followers">
-    //                     <span >Followers</span>
-    //                     <span >
-    //                       {userProfile.followers}
-    //                     </span>
-    //                   </label>
-    //                   <label className="profile-following">
-    //                     <span >Following</span>
-    //                     <span >
-    //                       {userProfile.following}
-    //                     </span>
-    //                   </label>
-    //                 </div>
-    //               </div>
-    //             </div>
-    //           </Card>
-    //         </div>
-    //       <div className="bottom-container">
-    //         <div className="card2">
-    //           <Card>
-    //             <div className="card-padding">
-    //               <div className="profile-pic">
-    //                 <div className="avatar">
-    //                   <img
-    //                     className="profile-avatar"
-    //                     src={avatar}
-    //                     alt="image"
-    //                   />
-    //                 </div>
-    //               </div>
-    //               <div className="profile-details">
-    //                 <label >
-    //                   {userProfile.firstName +
-    //                     (userProfile.middleName
-    //                       ? " " +
-    //                         userProfile.middleName +
-    //                         " " +
-    //                         userProfile.lastName
-    //                       : " " + userProfile.lastName)}
-    //                 </label>
-    //                 <div className="profile-location">
-    //                   {<CiLocationOn />}
-    //                   <label >
-    //                     {userProfile.location.city},{" "}
-    //                     {userProfile.location.country}
-    //                   </label>
-    //                 </div>
-    //                 <div className="profile-info">
-    //                   <label className="profile-projects">
-    //                     <span >Projects</span>
-    //                     <span >
-    //                       {userProfile.projects}
-    //                     </span>
-    //                   </label>
-    //                   <label className="profile-followers">
-    //                     <span >Followers</span>
-    //                     <span >
-    //                       {userProfile.followers}
-    //                     </span>
-    //                   </label>
-    //                   <label className="profile-following">
-    //                     <span >Following</span>
-    //                     <span >
-    //                       {userProfile.following}
-    //                     </span>
-    //                   </label>
-    //                 </div>
-    //               </div>
-    //             </div>
-    //           </Card>
-    //         </div>
-    //       </div>
-    //     </div> */}
-    //   </div>
-    //   {/* <div className="bottom-container">
-    //     <div className="card2">
-    //       <Card>
-    //         <div className="card-padding">
-    //           <div className="profile-pic">
-    //             <div className="avatar">
-    //               <img className="profile-avatar" src={avatar} alt="image" />
-    //             </div>
-    //           </div>
-    //           <div className="profile-details">
-    //             <label >
-    //               {userProfile.firstName +
-    //                 (userProfile.middleName
-    //                   ? " " +
-    //                     userProfile.middleName +
-    //                     " " +
-    //                     userProfile.lastName
-    //                   : " " + userProfile.lastName)}
-    //             </label>
-    //             <div className="profile-location">
-    //               {<CiLocationOn />}
-    //               <label >
-    //                 {userProfile.location.city}, {userProfile.location.country}
-    //               </label>
-    //             </div>
-    //             <div className="profile-info">
-    //               <label className="profile-projects">
-    //                 <span >Projects</span>
-    //                 <span >{userProfile.projects}</span>
-    //               </label>
-    //               <label className="profile-followers">
-    //                 <span >Followers</span>
-    //                 <span >{userProfile.followers}</span>
-    //               </label>
-    //               <label className="profile-following">
-    //                 <span >Following</span>
-    //                 <span >{userProfile.following}</span>
-    //               </label>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </Card>
-    //     </div>
-    //   </div> */}
-    // </div>
-    // <div className="home">
     <div className="home-container-grid">
       <div className="top-container">
         <div className="widget-container gap">
@@ -348,17 +72,8 @@ const Home = () => {
                   <img className="profile-avatar" src={avatar} alt="image" />
                 </div>
               </div>
-              {/* <div className="profile-details"> */}
               <div className="profile-name-loc">
-                <h2>
-                  {userProfile.firstName +
-                    (userProfile.middleName
-                      ? " " +
-                        userProfile.middleName +
-                        " " +
-                        userProfile.lastName
-                      : " " + userProfile.lastName)}
-                </h2>
+                <h2>{user ? user?.name : userProfile?.firstName}</h2>
                 <div className="profile-location">
                   {<CiLocationOn />}
                   <h3>
@@ -380,7 +95,6 @@ const Home = () => {
                   <h2>{userProfile.following}</h2>
                 </label>
               </div>
-              {/* </div> */}
             </div>
           </Card>
         </div>
@@ -393,15 +107,6 @@ const Home = () => {
                 <div className="account-container">
                   <Card className="box-shadow card-background">
                     <div className="card-padding">
-                      {/* <div className="profile-pic">
-                    <div className="avatar">
-                      <img
-                        className="profile-avatar"
-                        src={avatar}
-                        alt="image"
-                      />
-                    </div>
-                  </div> */}
                       <div className="account">
                         <div className="account-top">
                           <div className="top flex-grow">
@@ -412,15 +117,7 @@ const Home = () => {
                             <h1 className="font-white">$ 12, 234</h1>
                           </div>
                         </div>
-                        <div className="account-bottom">
-                          {/* <div className="top">
-                              <h3 className="font-white">Account Type</h3>
-                              <h2 className="font-white">Main</h2>
-                            </div> */}
-                          {/* <div className="top account-amount">
-                              <h1 className="font-white">$ 12, 234</h1>
-                            </div> */}
-                        </div>
+                        <div className="account-bottom"></div>
                       </div>
                     </div>
                   </Card>
@@ -429,16 +126,6 @@ const Home = () => {
                   <div className="earning">
                     <Card className="box-shadow">
                       <div className="card-padding">
-                        {/* <div className="profile-pic">
-                    <div className="avatar">
-                      <img
-                        className="profile-avatar"
-                        src={avatar}
-                        alt="image"
-                      />
-                    </div>
-                  </div> */}
-
                         <div className="top">
                           <h3>Earnings</h3>
                         </div>
@@ -451,16 +138,6 @@ const Home = () => {
                   <div className="spending">
                     <Card className="box-shadow">
                       <div className="card-padding">
-                        {/* <div className="profile-pic">
-                    <div className="avatar">
-                      <img
-                        className="profile-avatar"
-                        src={avatar}
-                        alt="image"
-                      />
-                    </div>
-                  </div> */}
-
                         <div className="top">
                           <h3>Spendings</h3>
                         </div>
@@ -504,7 +181,6 @@ const Home = () => {
                   <BsArrowRight />
                 </div>
               </div>
-              {/* </div> */}
             </div>
           </Card>
         </div>
@@ -537,13 +213,11 @@ const Home = () => {
                   <BsArrowRight />
                 </div>
               </div>
-              {/* </div> */}
             </div>
           </Card>
         </div>
       </div>
     </div>
-    // </div>
   );
 };
 

@@ -1,0 +1,97 @@
+// .category-amount-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 3rem;
+// }
+
+// .margin-top {
+//   margin-top: 0.5rem;
+// }
+
+// .flex-w-direction {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// textarea {
+//   resize: vertical;
+//   min-height: 5rem !important;
+//   max-height: 10rem !important;
+// }
+
+// .date-picker {
+//   width: 20rem;
+//   border: 2px solid rgb(223, 225, 230);
+//   border-radius: 5px;
+//   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+//   &:focus {
+//     outline: none;
+//     background-color: rgb(255, 255, 255);
+//     border-color: rgb(76, 154, 255);
+//   }
+// }
+
+// //
+// button {
+//   cursor: pointer;
+// }
+// .chip-group {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+// .chip.chip-checkbox > .chip-add-icon::after {
+//   content: "add";
+// }
+// .chip.chip-checkbox.active > .chip-add-icon::after {
+//   content: "done";
+// }
+// .chip > * {
+//   margin-right: 2px;
+//   margin-left: 2px;
+//   color: #757373;
+// }
+// .chip input {
+//   display: none;
+// }
+// .chip.chip-checkbox,
+// .chip.chip-toggle,
+// .chip.clickable {
+//   cursor: pointer;
+// }
+// .chip.active {
+//   background-color: #d3d2d2;
+//   border-color: #c3c2c2;
+//   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+// }
+// .chip:hover,
+// .chip:focus {
+//   background-color: #e3e2e2;
+// }
+// .chip:active:focus {
+//   background-color: #d3d2d2;
+// }
+// .chip button {
+//   border: none;
+//   margin-top: 0;
+//   margin-bottom: 0;
+//   padding: 0;
+//   background: none;
+//   display: inline-flex;
+// }
+// .chip {
+//   transition: all 0.3s ease-in-out;
+//   background-color: #fff;
+//   border-radius: 30px;
+//   border: 1px solid #d3d2d2;
+//   display: inline-flex;
+//   align-items: center;
+//   padding: 4px 6px 4px 6px;
+//   margin-right: 6px;
+//   margin-bottom: 6px;
+// }
+// .chip i.material-icons {
+//   font-size: 18px;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }

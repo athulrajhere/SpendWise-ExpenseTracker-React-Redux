@@ -1,4 +1,4 @@
-import { options } from "../../components/chart/Chart";
+import { options } from "../../components/common/chart/Chart";
 import "./setting.scss";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";

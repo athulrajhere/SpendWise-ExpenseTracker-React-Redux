@@ -1,4 +1,4 @@
-export const user = {
+export const userData = {
   avatar: `/assets/avatars/avatar_pic.png`,
   location: {
     city: "New York",

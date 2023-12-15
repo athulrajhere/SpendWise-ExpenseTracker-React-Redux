@@ -1,0 +1,26 @@
+@use "../../../App.scss";
+
+.category-amount-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 5rem !important;
+  max-height: 10rem !important;
+}
+
+.date-picker {
+  @extend .input-primary;
+  width: 100%;
+}
