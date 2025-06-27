@@ -1,7 +1,5 @@
 # SpendWise - Expense Tracker
 
-![Dashboard Screenshot](resources/dashboard_page.png)
-
 <p align="center">
   <img src="resources/dashboard_page.png" alt="SpendWise Banner" width="100%" />
 </p>
