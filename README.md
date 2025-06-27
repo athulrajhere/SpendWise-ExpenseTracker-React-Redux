@@ -47,7 +47,7 @@ Before running the application, make sure you have the following installed:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/athulrajhere/SpendWise-ExpenseTracker-React-Redux.git
+git clone https://github.com/athulrajhere/SpendWise-ExpenseTracker-React_Redux.git
 cd SpendWise-ExpenseTracker-React-Redux
 ```
 
