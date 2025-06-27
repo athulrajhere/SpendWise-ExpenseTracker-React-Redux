@@ -18,7 +18,7 @@ SpendWise is a full-stack expense tracker application built using the MERN stack
   - React + Vite
   - Redux Toolkit & React-Redux
   - TypeScript
-  - Chart.js, Recharts, ECharts, Highcharts (for data visualization)
+  - Highcharts (for data visualization)
   - Axios
   - React Router DOM
   - React Bootstrap, Bootstrap, Sass (SCSS)
