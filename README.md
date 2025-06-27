@@ -2,6 +2,10 @@
 
 ![Dashboard Screenshot](resources/dashboard_page.png)
 
+<p align="center">
+  <img src="resources/dashboard_page.png" alt="SpendWise Banner" width="100%" />
+</p>
+
 SpendWise is a full-stack expense tracker application built using the MERN stack (MongoDB, Express.js, React, Node.js). The frontend is powered by React (Vite) and the backend by Node.js/Express with MongoDB. It uses Redux for state management and helps users manage their finances, track expenses, and visualize spending patterns with modern charts and analytics.
 
 ## Features
